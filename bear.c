@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
 * interactive - returns true if shell is interactive mode
-* @tach: adress deyal struct 
+* @tach: adress deyal struct
 * Return: 1 ila kan  interactive mode, 0  ila kan otherwise
 */
 int interactive(info_t *tach)
@@ -27,7 +27,6 @@ return (0);
 *@cio: char li f input 
 *Return: 1 il kan  cio is alphabetic, 0ila kan  otherwise
 */
-
 int _isalpha(int cio)
 {
 if ((cio >= 'a' && cio <= 'z') || (cio >= 'A' && cio <= 'Z'))
@@ -41,7 +40,6 @@ return (0);
 *@ese: string li ghadi n7awlo 
 *Return: 0 if no numbers in string, converted number otherwise
 */
-
 int _atoi(char *ese)
 {
 int i, sign = 1, flag = 0, output;
