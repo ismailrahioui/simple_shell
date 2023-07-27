@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
 * _myexit - exits the shell
-* @tach: var kankhadmo bih 
-*  Return: katkherej bchi hakawe bchi haka 
+* @tach: var kankhadmo bih
+*  Return: katkherej bchi hakawe bchi haka
 */
 int _myexit(info_t *tach)
 {
@@ -27,7 +27,7 @@ return (-2);
 
 /**
 * _mycd - changes the current directory of the process
-* @tach: S variable ma7tot hena 
+* @tach: S variable ma7tot hena
 *  Return: dima 0
 */
 int _mycd(info_t *tach)
@@ -42,7 +42,7 @@ if (!tach->argv[1])
 {
 diro = _getenv(tach, "HOME=");
 if (!diro)
-chdir_ret = 
+chdir_ret = /* TODO: what should this be? */
 chdir((diro = _getenv(tach, "PWD=")) ? diro : "/");
 else
 chdir_ret = chdir(diro);
@@ -56,7 +56,7 @@ _putchar('\n');
 return (1);
 }
 _puts(_getenv(tach, "OLDPWD=")), _putchar('\n');
-chdir_ret = 
+chdir_ret = /* TODO: what should this be? */
 chdir((diro = _getenv(tach, "OLDPWD=")) ? diro : "/");
 }
 else
@@ -76,7 +76,7 @@ return (0);
 
 /**
 * _myhelp - changes the current directory of the process
-* @tach: nefss l variable 
+* @tach: nefss l variable
 *  Return: dima 0
 */
 int _myhelp(info_t *tach)
@@ -86,6 +86,6 @@ char **arg_array;
 arg_array = tach->argv;
 _puts("help call works. Function not yet implemented \n");
 if (0)
-_puts(*arg_array); 
+_puts(*arg_array);
 return (0);
 }
