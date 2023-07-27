@@ -36,9 +36,9 @@ int unset_alias(info_t *tach, char *store)
 }
 
 /**
- * set_alias - sets alias to string hadi function 
+ * set_alias - sets alias to string hadi function
  * @tach: param
- * @store: alias string 
+ * @store: alias string
  *
  * Return: dima 0 f success, 1 f error
  */
@@ -58,7 +58,7 @@ int set_alias(info_t *tach, char *store)
 
 /**
  * print_alias - prints an alias string
- * @nodejs: wahed aliad node deyal varible 
+ * @nodejs: wahed aliad node deyal varible
  *
  * Return: dima 0 f success, 1 f error
  */
