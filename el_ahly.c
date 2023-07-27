@@ -109,7 +109,13 @@ void find_cmd(info_t *soha)
 	else
 	{
 		if ((interactive(soha) || _getenv(soha, "PATH=")
+<<<<<<< HEAD
 			|| soha->argv[0][0] == '/') && is_cmd(soha, soha->argv[0]))
+=======
+			|| soha->argv[0][0] == '/') && is_cmd(soha,
+
+soha->argv[0]))
+>>>>>>> 14a4a3e45aaa4f9670add93c5a6cecab6c726086
 			fork_cmd(soha);
 		else if (*(soha->arg) != '\n')
 		{
