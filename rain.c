@@ -3,10 +3,10 @@
 /**
  * input_buf - buffers chained commands
  * @tach: param deyal struct
- * @bu: address deyal  buffer li endna 
- * @leno: address deyal len var li ghadi nkhadmo bih 
+ * @bu: address deyal  buffer li endna
+ * @leno: address deyal len var li ghadi nkhadmo bih
  *
- * Return: bytes li qrina 
+ * Return: bytes li qrina
  */
 ssize_t input_buf(info_t *tach, char **bu, size_t *leno)
 {
@@ -48,7 +48,7 @@ ssize_t input_buf(info_t *tach, char **bu, size_t *leno)
  * get_input - gets a line minus the newline
  * @tach: parameter deyal struct
  *
- * Return: bytes li qrina 
+ * Return: bytes li qrina
  */
 ssize_t get_input(info_t *tach)
 {
@@ -92,8 +92,8 @@ ssize_t get_input(info_t *tach)
 /**
  * read_buf - reads a buffer
  * @tach: parameter deyal struct
- * @bu: buffer li endna 
- * @size: size li ghadi nkhadmo bih 
+ * @bu: buffer li endna
+ * @size: size li ghadi nkhadmo bih
  *
  * Return: r
  */
@@ -111,7 +111,7 @@ ssize_t read_buf(info_t *tach, char *bu, size_t *size)
 
 /**
  * _getline - gets the next line of input from STDIN
- * @tach: parameter deyal struct li endna 
+ * @tach: parameter deyal struct li endna
  * @pitro: address deyal pointer heta buffer, preallocated wela NULL
  * @leno: lqyass deyale preallocated ptr buffer ila makanch  NULL
  *
@@ -158,7 +158,7 @@ int _getline(info_t *tach, char **pitro, size_t *leno)
 
 /**
  * sigintHandler - blocks ctrl-C
- * @s_num: la signe deyal dak num 
+ * @s_num: la signe deyal dak num
  *
  * Return: void
  */
