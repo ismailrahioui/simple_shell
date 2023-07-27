@@ -51,7 +51,7 @@ int _unsetenv(info_t *tach, char *vary)
  * _setenv - Initialize a new environment variable,
  *             or modify an existing one
  * @tach: Slksddjj
- * @very: tthe string 
+ * @very: tthe string
  * @input:  var value
  *  Return: dima 0
  */
