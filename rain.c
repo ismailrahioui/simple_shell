@@ -156,7 +156,7 @@ int _getline(info_t *tach, char **pitro, size_t *leno)
 
 /**
 * sigintHandler - blocks ctrl-C
-* @s_num: signe 
+* @s_num: signe
 *
 * Return: void
 */
