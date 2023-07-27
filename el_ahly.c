@@ -109,9 +109,7 @@ void find_cmd(info_t *soha)
 	else
 	{
 		if ((interactive(soha) || _getenv(soha, "PATH=")
-			|| soha->argv[0][0] == '/') && is_cmd(soha, 
-
-soha->argv[0]))
+			|| soha->argv[0][0] == '/') && is_cmd(soha, soha->argv[0]))
 			fork_cmd(soha);
 		else if (*(soha->arg) != '\n')
 		{
@@ -140,7 +138,7 @@ void fork_cmd(info_t *soha)
 	}
 	if (child_pid == 0)
 	{
-		if (execve(soha->path, soha->argv, get_environ(soha)) 
+		if (execve(soha->path, soha->argv, get_environ(soha))
 
 == -1)
 		{

@@ -24,9 +24,9 @@ int is_chain(info_t *tech, char *buffer, size_t *pi)
 		j++;
 		tech->cmd_buffer_type = CMD_AND;
 	}
-	else if (buffer[j] == ';') 
+	else if (buffer[j] == ';')
 	{
-		buffer[j] = 0; 
+		buffer[j] = 0;
 		tech->cmd_buffer_type = CMD_CHAIN;
 	}
 	else

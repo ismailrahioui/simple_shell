@@ -59,7 +59,7 @@ char *starts_with(const char *haystuck, const char *noodle)
 /**
  * _strcat - concatenates two strings
  * @desk: masafet el buffer
- * @src: masdar el buffer
+ * @srk: masdar el buffer
  *
  * Return: pinter to destination bffer
  */

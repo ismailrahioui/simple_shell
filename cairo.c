@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * list_len - tahded tol ellinked list 
+ * list_len - tahded tol ellinked list
  * @x: pinter awel node
  *
  * Return: size of list

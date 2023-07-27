@@ -2,7 +2,7 @@
 
 /**
  * **strtow - splits a string into words. Repeat delimiters are ignored
- * @str: the input string
+ * @FD: the input string
  * @d: the delimeter string
  * Return: a pointer to an array of strings, or NULL on failure
  */
@@ -12,12 +12,12 @@ char **strtow(char *FD, char *d)
 	int i, j, k, m, numwords = 0;
 	char **s;
 
-	if (FD == NULL || FD[0] == 0)
+	if (FD[0] == 0 || FD == NULL)
 		return (NULL);
-	if (!do)
-		do = " ";
+	if (!d)
+		d = " ";
 	for (i = 0; FD[i] != '\0'; i++)
-		if (!is_delim(FD[i], d) && (is_delim(FD[i + 1], do) || !FD[i + 1]))
+		if (!is_delim(FD[i], d) && (is_delim(FD[i + 1], d) || !FD[i + 1]))
 			numwords++;
 
 	if (numwords == 0)
@@ -50,19 +50,19 @@ char **strtow(char *FD, char *d)
 
 /**
  * **strtow2 - splits a string into words
- * @str: the input string
+ * @FD: the input string
  * @d: the delimeter
  * Return: a pointer to an array of strings, or NULL on failure
  */
-char **strtow2(char *FD, char do)
+char **strtow2(char *FD, char d)
 {
 	int i, j, k, m, numwords = 0;
 	char **s;
 
-	if (FD == NULL || str[0] == 0)
+	if (str[0] == 0 || FD == NULL)
 		return (NULL);
 	for (i = 0; FD[i] != '\0'; i++)
-		if ((FD[i] != d && FD[i + 1] == do) ||
+		if ((FD[i] != d && FD[i + 1] == d) ||
 		    (FD[i] != d && !FD[i + 1]) || FD[i + 1] == d)
 			numwords++;
 	if (numwords == 0)
@@ -72,10 +72,10 @@ char **strtow2(char *FD, char do)
 		return (NULL);
 	for (i = 0, j = 0; j < numwords; j++)
 	{
-		while (FD[i] == d && FD[i] != do)
+		while (FD[i] == d && FD[i] != d)
 			i++;
 		k = 0;
-		while (FD[i + k] != d && FD[i + k] && FD[i + k] != do)
+		while (FD[i + k] != d && FD[i + k] && FD[i + k] != d)
 			k++;
 		s[j] = malloc((k + 1) * sizeof(char));
 		if (!s[j])
