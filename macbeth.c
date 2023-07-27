@@ -2,7 +2,7 @@
 
 /**
  *_eputs - prints an input string
- * @storz: string li ghadi nkatbo 
+ * @storz: string li ghadi nkatbo
  *
  * Return: Nothing
  */
@@ -21,7 +21,7 @@ void _eputs(char *storz)
 
 /**
  * _eputchar - writes the character c to stderr
- * @cur: char li ghadi nkatbo lih 
+ * @cur: char li ghadi nkatbo lih
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
@@ -42,8 +42,8 @@ int _eputchar(char cur)
 
 /**
  * _putfd - writes the character c to given fd
- * @mac: char li ghadi nkatbo 
- * @bet: l file li ghadi nkabto fih 
+ * @mac: char li ghadi nkatbo
+ * @bet: l file li ghadi nkabto fih
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
@@ -65,7 +65,7 @@ int _putfd(char mac, int bet)
 
 /**
  *_putsfd - prints an input string
- * @storz: string li ghadi yetakteb 
+ * @storz: string li ghadi yetakteb
  * @bet: li ghadi nkatbo lih  to
  *
  * Return: the number of chars put
