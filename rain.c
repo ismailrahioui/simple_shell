@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
-* input_buf - buffers chained commands
-* @tach: parameter struct
-* @bu: address of buffer
-* @leno: address deyal var
-*
-* Return: bytes read
-*/
+ * input_buf - buffers chained commands
+ * @tach: param deyal struct
+ * @bu: address deyal  buffer li endna 
+ * @leno: address deyal len var li ghadi nkhadmo bih 
+ *
+ * Return: bytes li qrina 
+ */
 ssize_t input_buf(info_t *tach, char **bu, size_t *leno)
 {
 	ssize_t r = 0;
@@ -45,11 +45,11 @@ ssize_t input_buf(info_t *tach, char **bu, size_t *leno)
 }
 
 /**
-* get_input - gets a line minus the newline
-* @tach: param
-*
-* Return: bytes read
-*/
+ * get_input - gets a line minus the newline
+ * @tach: parameter deyal struct
+ *
+ * Return: bytes li qrina 
+ */
 ssize_t get_input(info_t *tach)
 {
 	static char *buf; /* the ';' command chain buffer */
@@ -90,12 +90,13 @@ ssize_t get_input(info_t *tach)
 }
 
 /**
-* _getline - gets the next line of input from STDIN
-* @tach: param
-* @pitro: addressL
-* @leno: size
-* Return: r
-*/
+ * read_buf - reads a buffer
+ * @tach: parameter deyal struct
+ * @bu: buffer li endna 
+ * @size: size li ghadi nkhadmo bih 
+ *
+ * Return: r
+ */
 ssize_t read_buf(info_t *tach, char *bu, size_t *size)
 {
 	ssize_t r = 0;
@@ -109,12 +110,13 @@ ssize_t read_buf(info_t *tach, char *bu, size_t *size)
 }
 
 /**
-* _getline - gets the next line of input from STDIN
-* @tach: param
-* @pitro: addressL
-* @leno: size
-* Return: s
-*/
+ * _getline - gets the next line of input from STDIN
+ * @tach: parameter deyal struct li endna 
+ * @pitro: address deyal pointer heta buffer, preallocated wela NULL
+ * @leno: lqyass deyale preallocated ptr buffer ila makanch  NULL
+ *
+ * Return: s
+ */
 int _getline(info_t *tach, char **pitro, size_t *leno)
 {
 	static char buf[READ_BUF_SIZE];
@@ -155,11 +157,11 @@ int _getline(info_t *tach, char **pitro, size_t *leno)
 }
 
 /**
-* sigintHandler - blocks ctrl-C
-* @s_num: signe
-*
-* Return: void
-*/
+ * sigintHandler - blocks ctrl-C
+ * @s_num: la signe deyal dak num 
+ *
+ * Return: void
+ */
 void sigintHandler(__attribute__((unused))int s_num)
 {
 	_puts("\n");
