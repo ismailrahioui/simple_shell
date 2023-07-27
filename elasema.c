@@ -103,7 +103,7 @@ size_t print_list_str(const list_t *x)
  */
 int delete_node_at_index(list_t **addpoint, unsigned int inteex)
 {
-	list_t *node*, *prev_node*;
+	list_t *node*,*prev_node*;
 	unsigned int i = 0;
 
 	if (!addpoint || !*addpoint)
@@ -142,7 +142,7 @@ int delete_node_at_index(list_t **addpoint, unsigned int inteex)
  */
 void free_list(list_t **heaptr)
 {
-	list_t *node*, *next_node*, *head*;
+	list_t *node*,*next_node*,*head*;
 
 	if (!heaptr || !*heaptr)
 		return;
