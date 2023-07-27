@@ -2,7 +2,7 @@
 
 /**
  * _erratoi - converts a string to an integer
- * @seen: li ghadi yetbadel 
+ * @seen: li ghadi yetbadel
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
  */
@@ -30,8 +30,8 @@ int _erratoi(char *seen)
 
 /**
  * print_error - prints an error message
- * @tach: param 
- * @tesr: chi unique 
+ * @tach: param
+ * @tesr: chi unique
  * Return: 0 if no numbers in string, converted number otherwise
  *        -1 on error
  */
@@ -48,7 +48,7 @@ void print_error(info_t *tach, char *tesr)
 
 /**
  * print_d - function prints a decimal (integer) number (base 10)
- * @value: value 
+ * @value: value
  * @bet: file
  *
  * Return: number of characters printed
@@ -89,7 +89,7 @@ int print_d(int value, int bet)
  * convert_number - converter function, a clone of itoa
  * @numero: number
  * @bas: base
- * @signes: les signes 
+ * @signes: les signes
  *
  * Return: string
  */
@@ -123,7 +123,7 @@ char *convert_number(long int numero, int bas, int signes)
 
 /**
  * remove_comments - function replaces first instance of '#' with '\0'
- * @bu: adress deyl hadak li tbadel 
+ * @bu: adress deyl hadak li tbadel
  * Return: Always 0;
  */
 void remove_comments(char *bu)
