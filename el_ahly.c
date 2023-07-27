@@ -140,7 +140,7 @@ void fork_cmd(info_t *soha)
 	}
 	if (child_pid == 0)
 	{
-		if (execve(soha->path, soha->argv, get_environ(soha)) 
+		if (execve(soha->path, soha->argv, get_environ(soha))
 
 == -1)
 		{
