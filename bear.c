@@ -24,7 +24,7 @@ return (0);
 
 /**
 *_isalpha - checks for alphabetic character
-*@cio: char li f input 
+*@cio: char li f input
 *Return: 1 il kan  cio is alphabetic, 0ila kan  otherwise
 */
 int _isalpha(int cio)
@@ -37,7 +37,7 @@ return (0);
 
 /**
 *_atoi - converts a string to an integer
-*@ese: string li ghadi n7awlo 
+*@ese: string li ghadi n7awlo
 *Return: 0 if no numbers in string, converted number otherwise
 */
 int _atoi(char *ese)
