@@ -33,9 +33,9 @@ char *_strncpy(char *dgst, char *surc, int nun)
 /**
  **_strncat - concatenates two strings
  *@dgst: string lawel
- *@surc:  tani 
+ *@surc:  tani
  *@nun: che7al mn byte daz
- *Return: string li rja3 
+ *Return: string li rja3
  */
 char *_strncat(char *dgst, char *surc, int nun)
 {
@@ -59,9 +59,9 @@ char *_strncat(char *dgst, char *surc, int nun)
 
 /**
  **_strchr - locates a character in a string
- *@sos: string li t7awel 
- *@cue: li kanqalbi elih 
- *Return: pointers 
+ *@sos: string li t7awel
+ *@cue: li kanqalbi elih
+ *Return: pointers
  */
 char *_strchr(char *sos, char cue)
 {
