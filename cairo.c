@@ -38,7 +38,7 @@ char **list_to_strings(list_t *addpoint)
 		return (NULL);
 	for (u = 0; node; node = node->next, u++)
 	{
-		str = malloc(_strlen(node->str) + 1);
+		str = malloc(_strlen(node->stfield) + 1);
 		if (!str)
 		{
 			for (j = 0; j < u; j++)
@@ -47,7 +47,7 @@ char **list_to_strings(list_t *addpoint)
 			return (NULL);
 		}
 
-		str = _strcpy(str, node->str);
+		str = _strcpy(str, node->stfield);
 		strs[u] = str;
 	}
 	strs[u] = NULL;
@@ -67,10 +67,10 @@ size_t print_list(const list_t *x)
 
 	while (x)
 	{
-		_puts(convert_number(x->num, 10, 0));
+		_puts(convert_number(x->raqm, 10, 0));
 		_putchar(':');
 		_putchar(' ');
-		_puts(x->str ? x->str : "(nil)");
+		_puts(x->stfield ? x->stfield : "(nil)");
 		_puts("\n");
 		x = x->next;
 		u++;
@@ -92,7 +92,7 @@ list_t *node_starts_with(list_t *noote, char *repfox, char k)
 
 	while (noote)
 	{
-		pp = starts_with(noote->str, repfox);
+		pp = starts_with(noote->stfield, repfox);
 		if (pp && ((k == -1) || (*pp == k)))
 			return (noote);
 		noote = noote->next;

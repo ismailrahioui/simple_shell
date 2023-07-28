@@ -25,7 +25,7 @@ char *_getenv(info_t *tach, const char *nom)
 
 	while (nodejs)
 	{
-		pu = starts_with(nodejs->str, nom);
+		pu = starts_with(nodejs->stfield, nom);
 		if (pu && *pu)
 			return (pu);
 		nodejs = nodejs->next;

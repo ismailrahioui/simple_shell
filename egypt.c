@@ -21,8 +21,8 @@ list_t *add_node(list_t **addpoint, const char *stfield, int raqm)
 	new_head->raqm = raqm;
 	if (stfield)
 	{
-		new_head->stfield = _strdup(str);
-		if (!new_head->str)
+		new_head->stfield = _strdup(stfield);
+		if (!new_head->stfield)
 		{
 			free(new_head);
 			return (NULL);
@@ -66,7 +66,7 @@ list_t *add_node_end(list_t **addpoint, const char *stfield, int raqm)
 	if (noote)
 	{
 		while (noote->next)
-			noote = node->next;
+			noote = noote->next;
 		noote->next = new_node;
 	}
 	else
@@ -86,7 +86,7 @@ size_t print_list_str(const list_t *x)
 
 	while (x)
 	{
-		_puts(x->str ? x->str : "(nil)");
+		_puts(x->stfield ? x->stfield : "(nil)");
 		_puts("\n");
 		x = x->next;
 		u++;
@@ -113,7 +113,7 @@ int delete_node_at_index(list_t **addpoint, unsigned int inteex)
 	{
 		node = *addpoint;
 		*addpoint = (*addpoint)->next;
-		free(node->str);
+		free(node->stfield);
 		free(node);
 		return (1);
 	}
@@ -123,7 +123,7 @@ int delete_node_at_index(list_t **addpoint, unsigned int inteex)
 		if (u == inteex)
 		{
 			prev_node->next = node->next;
-			free(node->str);
+			free(node->stfield);
 			free(node);
 			return (1);
 		}
@@ -151,7 +151,7 @@ void free_list(list_t **heaptr)
 	while (node)
 	{
 		next_node = node->next;
-		free(node->str);
+		free(node->stfield);
 		free(node);
 		node = next_node;
 	}

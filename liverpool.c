@@ -68,8 +68,8 @@ int print_alias(list_t *nodejs)
 
 	if (nodejs)
 	{
-		poo = _strchr(nodejs->str, '=');
-		for (ai = nodejs->str; ai <= poo; ai++)
+		poo = _strchr(nodejs->stfield, '=');
+		for (ai = nodejs->stfield; ai <= poo; ai++)
 			_putchar(*ai);
 		_putchar('\'');
 		_puts(poo + 1);

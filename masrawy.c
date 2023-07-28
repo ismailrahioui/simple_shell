@@ -16,18 +16,18 @@ int is_chain(info_t *tech, char *buffer, size_t *pi)
 	{
 		buffer[j] = 0;
 		j++;
-		tech->cmd_buffer_type = CMD_OR;
+		tech->cmd_buf_type = CMD_OR;
 	}
 	else if (buffer[j] == '&' && buffer[j + 1] == '&')
 	{
 		buffer[j] = 0;
 		j++;
-		tech->cmd_buffer_type = CMD_AND;
+		tech->cmd_buf_type = CMD_AND;
 	}
 	else if (buffer[j] == ';')
 	{
 		buffer[j] = 0;
-		tech->cmd_buffer_type = CMD_CHAIN;
+		tech->cmd_buf_type = CMD_CHAIN;
 	}
 	else
 		return (0);
@@ -49,7 +49,7 @@ void check_chain(info_t *tech, char *buffer, size_t *pi, size_t i, size_t len)
 {
 	size_t j = *pi;
 
-	if (tech->cmd_buffer_type == CMD_AND)
+	if (tech->cmd_buf_type == CMD_AND)
 	{
 		if (tech->status)
 		{
@@ -57,7 +57,7 @@ void check_chain(info_t *tech, char *buffer, size_t *pi, size_t i, size_t len)
 			j = len;
 		}
 	}
-	if (tech->cmd_buffer_type == CMD_OR)
+	if (tech->cmd_buf_type == CMD_OR)
 	{
 		if (!tech->status)
 		{
@@ -87,7 +87,7 @@ int repilace_alias(info_t *tech)
 		if (!node)
 			return (0);
 		free(tech->argv[0]);
-		pi = _strchr(node->str, '=');
+		pi = _strchr(node->stfield, '=');
 		if (!pi)
 			return (0);
 		pi = _strdup(pi + 1);

@@ -59,7 +59,7 @@ char **strtow2(char *FD, char d)
 	int i, j, k, m, numwords = 0;
 	char **s;
 
-	if (str[0] == 0 || FD == NULL)
+	if (d[0] == 0 || FD == NULL)
 		return (NULL);
 	for (i = 0; FD[i] != '\0'; i++)
 		if ((FD[i] != d && FD[i + 1] == d) ||

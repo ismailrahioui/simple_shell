@@ -45,8 +45,8 @@ extern char **environ;
  */
 typedef struct liststr
 {
-	int num;
-	char *str;
+	int raqm;
+	char *stfield;
 	struct liststr *next;
 } list_t;
 
@@ -150,7 +150,7 @@ char *_strchr(char *sos, char cue);
 
 /* toem_tokenizer.c */
 char **strtow(char *FD, char *d);
-char **strtow2(char *FD, chard);
+char **strtow2(char *FD, char d);
 
 /* toem_realloc.c */
 char *_memset(char *soso, char book, unsigned int noon);

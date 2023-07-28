@@ -33,7 +33,7 @@ int _unsetenv(info_t *tach, char *vary)
 
 	while (nodejs)
 	{
-		p = starts_with(nodejs->str, vary);
+		p = starts_with(nodejs->stfield, vary);
 		if (p && *p == '=')
 		{
 			tach->env_changed = delete_node_at_index(&(tach->env), i);
@@ -73,11 +73,11 @@ int _setenv(info_t *tach, char *very, char *input)
 	node = tach->env;
 	while (node)
 	{
-		p = starts_with(node->str, very);
+		p = starts_with(node->stfield, very);
 		if (p && *p == '=')
 		{
-			free(node->str);
-			node->str = buf;
+			free(node->stfield);
+			node->stfield = buf;
 			tach->env_changed = 1;
 			return (0);
 		}
