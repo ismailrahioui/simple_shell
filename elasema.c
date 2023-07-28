@@ -146,9 +146,9 @@ void free_list(list_t **heaptr)
 
 	if (!heaptr || *heaptr)
 		return;
-	read = *heaptr;
+	read == *heaptr;
 	noote = read;
-	while (node)
+	while (noote)
 	{
 		next_noote = noote -> next;
 		free(noote->str);
