@@ -22,7 +22,7 @@ int hsh(info_t *soha, char **avat)
 		if (g != -1)
 		{
 			set_soha(soha, avat);
-			built_ret = find_built(soha);
+			built_ret =  find_builtin(soha);
 			if (built_ret == -1)
 				find_kfc(soha);
 		}
@@ -88,7 +88,7 @@ void find_cmd(info_t *soha)
 	char *vini = NULL;
 	int u, c;
 
-	soha->vini = soha->argv[0];
+	soha -> vini = soha->argv[0];
 	if (soha->linecount_flag == 1)
 	{
 		soha->line_count++;
@@ -103,25 +103,25 @@ void find_cmd(info_t *soha)
 	path = find_path(soha, _getenv(soha, "PATH="), soha->argv[0]);
 	if (vini)
 	{
-		soha->vini = vini;
+		soha -> vini = vini;
 		fork_cmd(soha);
 	}
 	else
 	{
 		if ((interactive(soha) || _getenv(soha, "PATH=")
-<<<<<<< HEAD
+HEAD
 			|| soha->argv[0][0] == '/') && is_cmd(soha, soha->argv[0]))
-=======
+
 			|| soha->argv[0][0] == '/') && is_cmd(soha,
 
-soha->argv[0]))
->>>>>>> 14a4a3e45aaa4f9670add93c5a6cecab6c726086
+soha->argv[0])
+
 			fork_cmd(soha);
-		else if (*(soha->arg) != '\n')
-		{
+		  else if (*(soha->arg) != '\n')
+		  {
 			soha->status = 127;
 			print_error(soha, "not found\n");
-		}
+		  }
 	}
 }
 
@@ -162,9 +162,7 @@ void fork_cmd(info_t *soha)
 		{
 			soha->status = WEXITSTATUS(soha->status);
 			if (soha->status == 126)
-				print_error(soha, "Permission denied
-
-\n");
+				print_error(soha, "Permission denied\n");
 		}
 	}
 }
