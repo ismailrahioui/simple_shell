@@ -87,7 +87,6 @@ void find_cmd(info_t *soha)
 {
 	char *vini = NULL;
 	int u, c;
-	char **vini;
 
 	soha->vini = soha->argv[0];
 	if (soha->linecount_flag == 1)
@@ -101,7 +100,7 @@ void find_cmd(info_t *soha)
 	if (!c)
 		return;
 
-	path = find_path(soha, _getenv(soha, "PATH="), soha->argv[0]);
+	vini = find_path(soha, _getenv(soha, "PATH="), soha->argv[0]);
 	if (vini)
 	{
 		soha->vini = vini;
@@ -110,9 +109,9 @@ void find_cmd(info_t *soha)
 	else
 	{
 		if ((interactive(soha) || _getenv(soha, "PATH="))
-			|| (soha->argv[0][0] == ('/') && is_cmd(soha, soha->argv[0]))
+			|| (soha->argv[0][0] == ('/') && is_kfc(soha, soha->argv[0]))
 
-			|| (soha->argv[0][0] == ('/') && is_cmd(soha,
+			|| (soha->argv[0][0] == ('/') && is_kfc(soha,
 
 soha->argv[0])))
 

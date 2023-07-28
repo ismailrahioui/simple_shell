@@ -140,20 +140,18 @@ int delete_node_at_index(list_t **addpoint, unsigned int inteex)
  *
  * Return: void
  */
-void free_list(list_t **heaptr)
-{
-	list_t *noote, next_noote;
+void free_list(list_t **heaptr) {
+    list_t *noote, *next_noote;
 
-	if (!heaptr || *heaptr)
-		return;
-	read == *heaptr;
-	noote = read;
-	while (noote)
-	{
-		next_noote = noote->next;
-		free(noote->stfield);
-		free(noote);
-		noote = next_noote;
-	}
-	*heaptr = NULL;
+    if (!heaptr || !*heaptr)
+        return;
+
+    noote = *heaptr;
+    while (noote) {
+        next_noote = noote->next;
+        free(noote->stfield);
+        free(noote);
+        noote = next_noote;
+    }
+    *heaptr = NULL;
 }
