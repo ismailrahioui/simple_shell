@@ -87,7 +87,7 @@ void find_cmd(info_t *soha)
 {
 	char *vini = NULL;
 	int u, c;
-	char **path;
+	char **vini;
 
 	soha->vini = soha->argv[0];
 	if (soha->linecount_flag == 1)
@@ -144,7 +144,7 @@ void fork_cmd(info_t *soha)
 	}
 	if (child_pid == 0)
 	{
-		if (execve(soha->path, soha->argv, get_environ(soha))
+		if (execve(soha->vini, soha->argv, get_environ(soha))
 == -1)
 		{
 			free_info(soha, 1);
