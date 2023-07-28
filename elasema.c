@@ -86,7 +86,7 @@ size_t print_list_str(const list_t *x)
 
 	while (x)
 	{
-		_puts(x->str ? x->str : "(nil)");
+		_puts(x->stfield ? x->stfield : "(nil)");
 		_puts("\n");
 		x = x->next;
 		i++;
@@ -113,7 +113,7 @@ int delete_node_at_index(list_t **addpoint, unsigned int inteex)
 	{
 		noote = *addpoint;
 		*addpoint = (*addpoint)->next;
-		free(noote->str);
+		free(noote->stfield);
 		free(noote);
 		return (1);
 	}
@@ -123,7 +123,7 @@ int delete_node_at_index(list_t **addpoint, unsigned int inteex)
 		if (i == inteex)
 		{
 			prev_noote->next = noote->next;
-			free(noote->str);
+			free(noote->stfield);
 			free(noote);
 			return (1);
 		}
@@ -142,7 +142,7 @@ int delete_node_at_index(list_t **addpoint, unsigned int inteex)
  */
 void free_list(list_t **heaptr)
 {
-	list_t *noote, *next_noote, *heaptr;
+	list_t *noote, next_noote;
 
 	if (!heaptr || *heaptr)
 		return;
@@ -150,10 +150,10 @@ void free_list(list_t **heaptr)
 	noote = read;
 	while (noote)
 	{
-		next_noote = noote -> next;
-		free(noote->str);
+		next_noote = noote->next;
+		free(noote->stfield);
 		free(noote);
-		node = next_node;
+		noote = next_noote;
 	}
 	*heaptr = NULL;
 }

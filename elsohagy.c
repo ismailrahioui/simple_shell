@@ -55,7 +55,7 @@ void *_realloc(void *pter, unsigned int osize, unsigned int nsize)
 		return (NULL);
 
 	osize = osize < nsize ? osize : nsize;
-	while (old_size--)
+	while (osize--)
 		l[osize] = ((char *)pter)[osize];
 	free(pter);
 	return (l);

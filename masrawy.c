@@ -130,7 +130,7 @@ int repilace_vars(info_t *tech)
 		if (node)
 		{
 			replace_string(&(tech->argv[i]),
-				_strdup(_strchr(node->str, '=') + 1));
+				_strdup(_strchr(node->stfield, '=') + 1));
 			continue;
 		}
 		replace_string(&tech->argv[i], _strdup(""));

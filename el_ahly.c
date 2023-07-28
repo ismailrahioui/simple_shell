@@ -14,24 +14,24 @@ int hsh(info_t *soha, char **avat)
 
 	while (g != -1 && built_ret != -2)
 	{
-		clear_soha(soha);
+		clear_info(soha);
 		if (interactive(soha))
 			_puts("$ ");
 		_eputchar(BUF_FLUSH);
 		g = get_input(soha);
 		if (g != -1)
 		{
-			set_soha(soha, avat);
+			set_info(soha, avat);
 			built_ret =  find_builtin(soha);
 			if (built_ret == -1)
-				find_kfc(soha);
+				find_cmd(soha);
 		}
 		else if (interactive(soha))
 			_putchar('\n');
-		free_soha(soha, 0);
+		free_info(soha, 0);
 	}
 	write_history(soha);
-	free_soha(soha, 1);
+	free_info(soha, 1);
 	if (!interactive(soha) && soha->status)
 		exit(soha->status);
 	if (built_ret == -2)
@@ -87,8 +87,9 @@ void find_cmd(info_t *soha)
 {
 	char *vini = NULL;
 	int u, c;
+	char **path;
 
-	soha -> vini = soha->argv[0];
+	soha->vini = soha->argv[0];
 	if (soha->linecount_flag == 1)
 	{
 		soha->line_count++;
@@ -103,25 +104,24 @@ void find_cmd(info_t *soha)
 	path = find_path(soha, _getenv(soha, "PATH="), soha->argv[0]);
 	if (vini)
 	{
-		soha -> vini = vini;
+		soha->vini = vini;
 		fork_cmd(soha);
 	}
 	else
 	{
-		if ((interactive(soha) || _getenv(soha, "PATH=")
-HEAD
-			|| soha->argv[0][0] == '/') && is_cmd(soha, soha->argv[0]))
+		if ((interactive(soha) || _getenv(soha, "PATH="))
+			|| (soha->argv[0][0] == ('/') && is_cmd(soha, soha->argv[0]))
 
-			|| soha->argv[0][0] == '/') && is_cmd(soha,
+			|| (soha->argv[0][0] == ('/') && is_cmd(soha,
 
-soha->argv[0])
+soha->argv[0])))
 
 			fork_cmd(soha);
-		  else if (*(soha->arg) != '\n')
-		  {
+		else if (*(soha->arg) != '\n')
+		{
 			soha->status = 127;
 			print_error(soha, "not found\n");
-		  }
+		}
 	}
 }
 
@@ -145,7 +145,6 @@ void fork_cmd(info_t *soha)
 	if (child_pid == 0)
 	{
 		if (execve(soha->path, soha->argv, get_environ(soha))
-
 == -1)
 		{
 			free_info(soha, 1);

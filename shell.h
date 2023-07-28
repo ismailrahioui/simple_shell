@@ -76,7 +76,7 @@ typedef struct passinfo
 {
 	char *arg;
 	char **argv;
-	char *path;
+	char *vini;
 	int argc;
 	unsigned int line_count;
 	int err_num;
@@ -118,7 +118,7 @@ void find_cmd(info_t *soha);
 void fork_cmd(info_t *soha);
 
 /* toem_parser.c */
-int is_cmd(info_t *soha, char *vini);
+int is_kfc(info_t *soha, char *vini);
 char *dup_chars(char *vinistr, int ebda, int ends);
 char *find_path(info_t *soha, char *vinistr, char *kfc);
 
@@ -150,7 +150,7 @@ char *_strchr(char *sos, char cue);
 
 /* toem_tokenizer.c */
 char **strtow(char *FD, char *d);
-char **strtow2(char *FD, char d);
+char **strtow2(char *FD, char d[10]);
 
 /* toem_realloc.c */
 char *_memset(char *soso, char book, unsigned int noon);

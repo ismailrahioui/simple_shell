@@ -8,7 +8,7 @@ void clear_info(info_t *tazeko)
 {
 	tazeko->arg = NULL;
 	tazeko->argv = NULL;
-	tazeko->path = NULL;
+	tazeko->vini = NULL;
 	tazeko->argc = 0;
 }
 
@@ -53,7 +53,7 @@ void free_info(info_t *cea, int alli)
 {
 	ffree(cea->argv);
 	cea->argv = NULL;
-	cea->path = NULL;
+	cea->vini = NULL;
 	if (alli)
 	{
 		if (!cea->cmd_buf)
