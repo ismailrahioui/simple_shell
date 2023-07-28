@@ -18,11 +18,16 @@ list_t *add_node(list_t **addpoint, const char *stfield, int raqm)
 	if (!new_head)
 		return (NULL);
 	_memset((void *)new_head, 0, sizeof(list_t));
-	new_head->raqm = raqm;
+	new_head -> raqm = raqm;
 	if (stfield)
 	{
+<<<<<<< HEAD
 		new_head->stfield = _strdup(stfield);
 		if (!new_head->stfield)
+=======
+		new_head -> stfield = _strdup(str);
+		if (!new_head->str)
+>>>>>>> 7d51b57437715a47cfbc909494d35f3dc78c399f
 		{
 			free(new_head);
 			return (NULL);
