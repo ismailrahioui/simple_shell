@@ -18,17 +18,17 @@ list_t *add_node(list_t **addpoint, const char *stfield, int raqm)
 	if (!new_head)
 		return (NULL);
 	_memset((void *)new_head, 0, sizeof(list_t));
-	new_head->raqm = raqm;
+	new_head -> raqm = raqm;
 	if (stfield)
 	{
-		new_head->stfield = _strdup(stfield);
-		if (!new_head->stfield)
+		new_head -> stfield = _strdup(stfield);
+		if (!new_head -> stfield)
 		{
 			free(new_head);
 			return (NULL);
 		}
 	}
-	new_head->next = *addpoint;
+	new_head -> next = *addpoint;
 	*addpoint = new_head;
 	return (new_head);
 }
@@ -56,7 +56,7 @@ list_t *add_node_end(list_t **addpoint, const char *stfield, int raqm)
 	new_node->raqm = raqm;
 	if (stfield)
 	{
-		new_node->stfield = _strdup(stfield);
+		new_node -> stfield = _strdup(stfield);
 		if (!new_node->stfield)
 		{
 			free(new_node);
@@ -144,13 +144,13 @@ void free_list(list_t **heaptr)
 {
 	list_t *noote, *next_noote, *heaptr;
 
-	if (!heaptr || !*heaptr)
+	if (!heaptr || *heaptr)
 		return;
-	head = *heaptr;
-	node = head;
+	read = *heaptr;
+	noote = read;
 	while (node)
 	{
-		next_node = node->next;
+		next_node = noote -> next;
 		free(node->str);
 		free(node);
 		node = next_node;
