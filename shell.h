@@ -111,13 +111,13 @@ typedef struct builtin
 } builtin_table;
 
 
-/* toem_shloop.c */
+/* el_ahly.c */
 int hsh(info_t *soha, char **avat);
 int find_builtin(info_t *soha);
 void find_cmd(info_t *soha);
 void fork_cmd(info_t *soha);
 
-/* toem_parser.c */
+/* suez.c */
 int is_kfc(info_t *soha, char *vini);
 char *dup_chars(char *vinistr, int ebda, int ends);
 char *find_path(info_t *soha, char *vinistr, char *kfc);
@@ -125,34 +125,34 @@ char *find_path(info_t *soha, char *vinistr, char *kfc);
 /* loophsh.c */
 int loophsh(char **);
 
-/* toem_errors.c */
+/* macbeth.c */
 void _eputs(char *storz);
 int _eputchar(char cur);
 int _putfd(char mac, int bet);
 int _putsfd(char *storz, int bet);
 
-/* toem_string.c */
+/* elzamalek.c */
 int _strlen(char *soso);
 int _strcmp(char *soso1, char *soso2);
 char *starts_with(const char *haystuck, const char *noodle);
 char *_strcat(char *desk, char *srk);
 
-/* toem_string1.c */
+/* eight_file.c */
 char *_strcpy(char *desk, char *srk);
 char *_strdup(const char *stfield);
 void _puts(char *stfield);
 int _putchar(char k);
 
-/* toem_exits.c */
+/* PL.c */
 char *_strncpy(char *dgst, char *surc, int nun);
 char *_strncat(char *dgst, char *surc, int nun);
 char *_strchr(char *sos, char cue);
 
-/* toem_tokenizer.c */
+/* ninee_file.c */
 char **strtow(char *FD, char *d);
 char **strtow2(char *FD, char d[10]);
 
-/* toem_realloc.c */
+/* elsohagy.c */
 char *_memset(char *soso, char book, unsigned int noon);
 void ffree(char **poop);
 void *_realloc(void *pter, unsigned int osize, unsigned int nsize);
@@ -160,51 +160,51 @@ void *_realloc(void *pter, unsigned int osize, unsigned int nsize);
 /* toem_memory.c */
 int bfree(void **);
 
-/* toem_atoi.c */
+/* bear.c */
 int interactive(info_t *tach);
 int is_delim(char ci, char *deliman);
 int _isalpha(int cio);
 int _atoi(char *ese);
 
-/* toem_errors1.c */
+/* matrix.c */
 int _erratoi(char *seen);
 void print_error(info_t *tach, char *tesr);
 int print_d(int value, int bet);
 char *convert_number(long int numero, int bas, int signes);
 void remove_comments(char *bu);
 
-/* toem_builtin.c */
+/* fa.c */
 int _myexit(info_t *tach);
 int _mycd(info_t *tach);
 int _myhelp(info_t *tach);
 
-/* toem_builtin1.c */
+/* liverpool.c */
 int _myhistory(info_t *tach);
 int unset_alias(info_t *tach, char *store);
 int set_alias(info_t *tach, char *store);
 int print_alias(list_t *nodejs);
 int _myalias(info_t *tach);
 
-/*toem_getline.c */
+/* rain.c */
 ssize_t input_buf(info_t *tach, char **bu, size_t *leno);
 ssize_t get_input(info_t *tach);
 ssize_t read_buf(info_t *tach, char *bu, size_t *size);
 int _getline(info_t *tach, char **pitro, size_t *leno);
 void sigintHandler(__attribute__((unused))int s_num);
 
-/* toem_getinfo.c */
+/* vagabond.c */
 void clear_info(info_t *tazeko);
 void set_info(info_t *otipax, char **avenue);
 void free_info(info_t *cea, int alli);
 
-/* toem_environ.c */
+/* low.c */
 char *_getenv(info_t *tach, const char *nom);
 int _myenv(info_t *tach);
 int _mysetenv(info_t *tach);
 int _myunsetenv(info_t *tach);
 int populate_env_list(info_t *tach);
 
-/* toem_getenv.c */
+/* saga.c */
 char **get_environ(info_t *tach);
 int _unsetenv(info_t *tach, char *vary);
 int _setenv(info_t *tach, char *very, char *input);
@@ -212,25 +212,25 @@ int _setenv(info_t *tach, char *very, char *input);
 /* toem_history.c */
 char *get_history_file(info_t *info);
 int write_history(info_t *info);
-int read_history(info_t *info);
+char read_history(info_t *info);
 int build_history_list(info_t *info, char *buf, int linecount);
 int renumber_history(info_t *info);
 
-/* toem_lists.c */
+/* egypt.c */
 list_t *add_node(list_t **addpoint, const char *stfield, int raqm);
 list_t *add_node_end(list_t **addpoint, const char *stfield, int raqm);
 size_t print_list_str(const list_t *x);
 int delete_node_at_index(list_t **addpoint, unsigned int inteex);
 void free_list(list_t **heaptr);
 
-/* toem_lists1.c */
+/* cairo.c */
 size_t list_len(const list_t *x);
 char **list_to_strings(list_t *addpoint);
 size_t print_list(const list_t *x);
 list_t *node_starts_with(list_t *noote, char *repfox, char k);
 ssize_t get_node_index(list_t *addpoint, list_t *noote);
 
-/* toem_vars.c */
+/* masrawy.c */
 int is_chain(info_t *tech, char *buffer, size_t *pi);
 void check_chain(info_t *tech, char *buffer, size_t *pi, size_t i, size_t len);
 int replace_alias(info_t *tech);

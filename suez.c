@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * is_cmd -  bnhded elfile ez can shghal
+ * is_kfc -  bnhded elfile ez can shghal
  * @soha: soha struct
  * @vini: vini ll file
  *
  * Return: 1 if true, 0 otherwise
  */
-int is_cmd(info_t *soha, char *vini)
+int is_kfc(info_t *soha, char *vini)
 {
 	struct stat st;
 

@@ -70,12 +70,12 @@ void check_chain(info_t *tech, char *buffer, size_t *pi, size_t i, size_t len)
 }
 
 /**
- * repilace_alias - repilaces an aliases in the tokenized string
+ * replace_alias - repilaces an aliases in the tokenized string
  * @tech: the piarameter struct
  *
  * Return: 1 if repilaced, 0 otherwise
  */
-int repilace_alias(info_t *tech)
+int replace_alias(info_t *tech)
 {
 	int i;
 	list_t *node;
@@ -99,12 +99,12 @@ int repilace_alias(info_t *tech)
 }
 
 /**
- * repilace_vars - repilaces vars in the tokenized string
+ * replace_vars - repilaces vars in the tokenized string
  * @tech: the piarameter struct
  *
  * Return: 1 if repilaced, 0 otherwise
  */
-int repilace_vars(info_t *tech)
+int replace_vars(info_t *tech)
 {
 	int i = 0;
 	list_t *node;
@@ -140,13 +140,13 @@ int repilace_vars(info_t *tech)
 }
 
 /**
- * repilace_string - repilaces string
+ * replace_string - repilaces string
  * @adim: address of adim string
  * @gedid: gedid string
  *
  * Return: 1 if repilaced, 0 otherwise
  */
-int repilace_string(char **adim, char *gedid)
+int replace_string(char **adim, char *gedid)
 {
 	free(*adim);
 	*adim = gedid;

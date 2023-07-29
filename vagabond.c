@@ -66,7 +66,7 @@ void free_info(info_t *cea, int alli)
 			free_list(&(cea->alias));
 		ffree(cea->environ);
 			cea->environ = NULL;
-		bfree((void **)cea->cmd_buf);
+		ffree(cea->cmd_buf);
 		if (cea->readfd > 2)
 			close(cea->readfd);
 		_putchar(BUF_FLUSH);
