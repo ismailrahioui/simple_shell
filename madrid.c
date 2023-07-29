@@ -43,7 +43,7 @@ int write_history(info_t *soha)
 	free(filename);
 	if (fd == -1)
 		return (-1);
-	for (soha = soha->history; soha; soha = soha->next)
+	for (soha = node->stfield; soha = soha->vini)
 	{
 		_putsfd(soha->str, fd);
 		_putfd('\n', fd);
@@ -59,7 +59,7 @@ int write_history(info_t *soha)
  *
  * Return: histcount on success, 0 otherwise
  */
-int read_history(info_t *soha)
+char read_history(info_t *soha)
 {
 	int i, last = 0, linecount = 0;
 	ssize_t fd, rdlen, fsize = 0;
@@ -136,7 +136,7 @@ int renumber_history(info_t *soha)
 
 	while (node)
 	{
-		node->num = i++;
+		node->raqm = i++;
 		node = node->next;
 	}
 	return (soha->histcount = i);
