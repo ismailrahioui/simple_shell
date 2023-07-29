@@ -33,7 +33,6 @@ ssize_t input_buf(info_t *tach, char **bu, size_t *leno)
 			}
 			tach->linecount_flag = 1;
 			remove_comments(*bu);
-			build_history_list(tach, *bu, tach->histcount++);
 			/* if (_strchr(*bu, ';')) is this a command chain? */
 			{
 				*leno = r;

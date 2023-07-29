@@ -38,7 +38,6 @@ int main(int acate, char **avate)
 		info->readfd = fd;
 	}
 	populate_env_list(info);
-	read_history(info);
 	hsh(info, avate);
 	return (EXIT_SUCCESS);
 }

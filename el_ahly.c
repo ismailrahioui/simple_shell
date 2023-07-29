@@ -30,7 +30,6 @@ int hsh(info_t *soha, char **avat)
 			_putchar('\n');
 		free_info(soha, 0);
 	}
-	write_history(soha);
 	free_info(soha, 1);
 	if (!interactive(soha) && soha->status)
 		exit(soha->status);
